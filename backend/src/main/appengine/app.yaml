@@ -1,0 +1,17 @@
+runtime: java17
+env: standard
+
+entrypoint: 'java -jar build/libs/familytrees-1.0.jar'
+
+instance_class: F2
+automatic_scaling:
+  min_idle_instances: automatic
+  max_idle_instances: automatic
+  min_pending_latency: automatic
+  max_pending_latency: automatic
+
+handlers:
+- url: .*
+  script: auto
+  
+service_account: familytreewebsite-411906@appspot.gserviceaccount.com
